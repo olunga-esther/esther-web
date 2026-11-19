@@ -1,69 +1,70 @@
 import Image from "next/image";
 
+const strengths = [
+  { number: "01", title: "Web development", detail: "Building for the web, one thoughtful step at a time." },
+  { number: "02", title: "IT foundations", detail: "Curious about the systems and ideas behind technology." },
+  { number: "03", title: "Creative thinking", detail: "Bringing a fresh perspective to every challenge." },
+];
+
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main>
+      <section className="hero" id="home">
+        <nav className="nav wrap" aria-label="Main navigation">
+          <a className="wordmark" href="#home" aria-label="Esther Olunga home">EO<span>.</span></a>
+          <div className="nav-links">
+            <a href="#about">About</a>
+            <a href="#focus">What I do</a>
+            <a className="nav-contact" href="mailto:hello@example.com?subject=Hello%20Esther">Let’s talk <span>↗</span></a>
+          </div>
+        </nav>
+
+        <div className="hero-content wrap">
+          <div className="hero-copy">
+            <p className="eyebrow"><span className="status-dot" /> IT student · Kenya</p>
+            <h1>Curious mind.<br /><span>Creative</span> code.</h1>
+            <p className="intro">I’m Esther Olunga, an aspiring IT professional learning to turn ideas into thoughtful digital experiences.</p>
+            <div className="hero-actions">
+              <a className="button" href="mailto:hello@example.com?subject=Hello%20Esther">Get in touch <span>↗</span></a>
+              <a className="text-link" href="#about">A little about me <span>↓</span></a>
+            </div>
+            <div className="hero-meta"><span>BASED IN NAIROBI, KENYA</span><span>01 — 03</span></div>
+          </div>
+          <div className="portrait-wrap">
+            <div className="portrait-frame"><Image src="/profile.jpg" alt="Esther Olunga" fill priority sizes="(max-width: 760px) 78vw, 38vw" className="portrait" /></div>
+            <div className="portrait-note"><span className="note-star">✳</span><span>Learning today,<br />building tomorrow.</span></div>
+            <div className="portrait-index">ESTHER<br />OLUNGA</div>
+          </div>
+          <a className="scroll-cue" href="#about" aria-label="Scroll to about section">SCROLL TO EXPLORE <span>↓</span></a>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="hero-glow" />
+      </section>
+
+      <section className="about section wrap" id="about">
+        <div className="section-label"><span>01 / ABOUT ME</span><i /></div>
+        <div className="about-grid">
+          <h2>Technology is<br />my <span>playground.</span></h2>
+          <div className="about-copy">
+            <p>I’m pursuing a Bachelor of Science in Information Technology at Multimedia University of Kenya. I enjoy exploring how technology can solve real problems and make everyday experiences better.</p>
+            <p>Right now, I’m growing my skills, experimenting with ideas, and finding my own path in the world of tech. There’s always something new to learn—and I’m here for it.</p>
+            <div className="school-chip"><span className="chip-mark">MMU</span><span><b>Multimedia University of Kenya</b><small>BSc Information Technology</small></span></div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="focus section" id="focus">
+        <div className="wrap">
+          <div className="section-label"><span>02 / WHAT I’M INTO</span><i /></div>
+          <div className="focus-heading"><h2>My areas of<br /><span>curiosity.</span></h2><p>A few things I’m exploring as I grow into the kind of technologist I want to be.</p></div>
+          <div className="strength-list">{strengths.map((item) => <article className="strength" key={item.number}><span className="strength-number">{item.number}</span><h3>{item.title}</h3><p>{item.detail}</p><span className="strength-arrow">↗</span></article>)}</div>
+        </div>
+      </section>
+
+      <footer className="footer wrap" id="contact">
+        <div className="section-label"><span>03 / SAY HELLO</span><i /></div>
+        <div className="footer-content"><div><p className="eyebrow">HAVE A PROJECT OR AN IDEA?</p><h2>Let’s make<br /><span>something</span> matter.</h2></div><a className="button footer-button" href="mailto:hello@example.com?subject=Hello%20Esther">Email me <span>↗</span></a></div>
+        <div className="footer-bottom"><a className="wordmark" href="#home">EO<span>.</span></a><span>Designed with curiosity · Nairobi, Kenya</span><a href="#home">BACK TO TOP ↑</a></div>
+      </footer>
+    </main>
   );
 }
